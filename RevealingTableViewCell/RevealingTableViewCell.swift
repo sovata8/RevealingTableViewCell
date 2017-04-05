@@ -8,86 +8,40 @@
 // TODO: Make the pan gesture immediate?
 // TODO: Implement activeTransitions and complection animation handlers?
 // TODO: It would be nice if, in the case of one of the sides being limited, the spring-back animationa ctually bounces off the limited side, instead of going over it.
+// TODO: Animation does not stop when drag begins!
+
 
 import Foundation
 import UIKit
 
 
-public enum PositionState
-{
-    case closed
-    case openRight
-    case openLeft
-    
-    static let allValues: [PositionState] = [.closed, .openLeft, .openRight]
-}
-
-
 public protocol RevealingTableViewCellDelegate: class
 {
-    func didChangePositionState(cell: RevealingTableViewCell, positionState: PositionState)
+    func didChangePositionState(cell: RevealingTableViewCell)
     func didStartPanGesture(cell: RevealingTableViewCell)
 }
 
+
 public class RevealingTableViewCell: UITableViewCell
 {
-    private func getConstraintConstantForPositionState(_ positionState: PositionState) -> CGFloat
+    // MARK: - Public API
+    public enum PositionState
     {
-        switch positionState
-        {
-        case .closed:
-            return 0.0
-        case .openLeft:
-            return self.uiView_revealedContent_left!.frame.size.width
-        case .openRight:
-            return -self.uiView_revealedContent_right!.frame.size.width
-        }
-    }
-    
-    
-    private func isPositionStateSupported(_ positionState: PositionState) -> Bool
-    {
-        switch positionState
-        {
-        case .openLeft:
-            return self.uiView_revealedContent_left != nil
-            
-        case .openRight:
-            return self.uiView_revealedContent_right != nil
-            
-        case .closed:
-            return true
-        }
-    }
-    
-    
-    private func supportedPositionStates() -> [PositionState]
-    {
-        return PositionState.allValues.filter{self.isPositionStateSupported($0)}
-    }
-    
-    private func getPositionStateForConstraintConstant(_ constraintConstant: CGFloat) -> PositionState?
-    {
-        for positionState in self.supportedPositionStates()
-        {
-            if constraintConstant == self.getConstraintConstantForPositionState(positionState)
-            {
-                return positionState
-            }
-        }
+        case closed
+        case openLeft
+        case openRight
         
-        return nil
+        static let allValues: [PositionState] = [.closed, .openLeft, .openRight]
     }
-    
-    
     
     public weak var delegate: RevealingTableViewCellDelegate?
+    
     
     public var positionState: PositionState = .closed
     {
         didSet
         {
-            self.delegate?.didChangePositionState(cell: self, positionState: self.positionState)
+            self.delegate?.didChangePositionState(cell: self)
         }
     }
     
@@ -106,6 +60,8 @@ public class RevealingTableViewCell: UITableViewCell
             self.layoutConstraint.constant = constantToAnimateTo
         }
     }
+    // MARK: Public API -
+    
     
     // MARK: - IBOutlets
     @IBOutlet public weak var uiView_revealedContent_right: UIView?
@@ -114,11 +70,14 @@ public class RevealingTableViewCell: UITableViewCell
     @IBOutlet public weak var layoutConstraint: NSLayoutConstraint!
     // MARK: IBOutlets -
 
+    
     // Properties needed for the pan logic
     private var gesture_pan: UIPanGestureRecognizer!
     private var layoutConstraint_StartingConstant: CGFloat!
     private var panStartingTranslation: CGPoint!
     
+    
+    // MARK: - UITableViewCell overrides
     override public func awakeFromNib()
     {
         super.awakeFromNib()
@@ -137,6 +96,7 @@ public class RevealingTableViewCell: UITableViewCell
         super.prepareForReuse()
         self.setPositionState(.closed, animated: false)
     }
+    // MARK: UITableViewCell overrides -
     
     
     // MARK: - Gesture handlers
@@ -249,6 +209,7 @@ public class RevealingTableViewCell: UITableViewCell
         
     }
     
+    
     private func animateToCurrentPositionState(initialVelocityX: CGFloat = 0.5)
     {
         let constantToAnimateTo = self.getConstraintConstantForPositionState(self.positionState)
@@ -268,10 +229,60 @@ public class RevealingTableViewCell: UITableViewCell
                        completion: nil
         )
     }
+    
+    
+    private func getConstraintConstantForPositionState(_ positionState: PositionState) -> CGFloat
+    {
+        switch positionState
+        {
+        case .closed:
+            return 0.0
+        case .openLeft:
+            return self.uiView_revealedContent_left!.frame.size.width
+        case .openRight:
+            return -self.uiView_revealedContent_right!.frame.size.width
+        }
+    }
+    
+    
+    private func isPositionStateSupported(_ positionState: PositionState) -> Bool
+    {
+        switch positionState
+        {
+        case .openLeft:
+            return self.uiView_revealedContent_left != nil
+            
+        case .openRight:
+            return self.uiView_revealedContent_right != nil
+            
+        case .closed:
+            return true
+        }
+    }
+    
+    
+    private func supportedPositionStates() -> [PositionState]
+    {
+        return PositionState.allValues.filter{self.isPositionStateSupported($0)}
+    }
+    
+    
+    private func getPositionStateForConstraintConstant(_ constraintConstant: CGFloat) -> PositionState?
+    {
+        for positionState in self.supportedPositionStates()
+        {
+            if constraintConstant == self.getConstraintConstantForPositionState(positionState)
+            {
+                return positionState
+            }
+        }
+        
+        return nil
+    }
 }
 
 
-
+// MARK: - UIGestureRecognizerDelegate
 extension RevealingTableViewCell // : UIGestureRecognizerDelegate
 {
     override public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
