@@ -108,7 +108,6 @@ public class RevealingTableViewCell: UITableViewCell
     }
     
     // MARK: - IBOutlets
-    @IBOutlet public weak var uiLabel_name: UILabel!
     @IBOutlet public weak var uiView_revealedContent_right: UIView?
     @IBOutlet public weak var uiView_revealedContent_left: UIView?
     @IBOutlet public weak var uiView_mainContent: UIView!
