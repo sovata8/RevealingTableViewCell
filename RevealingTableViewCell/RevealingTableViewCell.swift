@@ -25,10 +25,15 @@ public protocol RevealingTableViewCellDelegate: class
 public class RevealingTableViewCell: UITableViewCell
 {
     // MARK: - Public API
+    
+    // Defines the cell's revealing state
     public enum PositionState
     {
+        /// The default state
         case closed
+        /// When `uiView_revealedContent_left` is shown
         case openLeft
+        /// When `uiView_revealedContent_right` is shown
         case openRight
         
         static let allValues: [PositionState] = [.closed, .openLeft, .openRight]
@@ -64,9 +69,17 @@ public class RevealingTableViewCell: UITableViewCell
     
     
     // MARK: - IBOutlets
-    @IBOutlet public weak var uiView_revealedContent_right: UIView?
+    
+    /// The content to be revealed, pinned to the left of the cell's `contentView`. Optional.
     @IBOutlet public weak var uiView_revealedContent_left: UIView?
+    
+    /// The content to be revealed, pinned to the right of the cell's `contentView`. Optional.
+    @IBOutlet public weak var uiView_revealedContent_right: UIView?
+    
+    /// This will be the view that slides sideways to reveal some content underneath. It needs to be pinned to the cell's `contentView` using the `layoutConstraint` (among others).
     @IBOutlet public weak var uiView_mainContent: UIView!
+    
+    /// This is the cobstraint that 'drives' the position changes. Define it as `uiView_mainContent.centerX = superview.centerX`
     @IBOutlet public weak var layoutConstraint: NSLayoutConstraint!
     // MARK: IBOutlets -
 
