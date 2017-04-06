@@ -5,10 +5,10 @@
 //  Created by Nikolay Suvandzhiev on 05/04/2017.
 //  Copyright © 2017 Nikolay Suvandzhiev. All rights reserved.
 //
-// TODO: Make the pan gesture immediate?
-// TODO: Implement activeTransitions and complection animation handlers?
-// TODO: It would be nice if, in the case of one of the sides being limited, the spring-back animationa ctually bounces off the limited side, instead of going over it.
-// TODO: Animation does not stop when drag begins!
+// TODO: Make the pan gesture immediate? Not sure if this is a good idea though...
+// TODO: Implement activeTransitions and completion animation handlers?
+// TODO: It would be nice if, in the case of one of the sides being limited, the spring-back animationa atually bounces off the limited side, instead of going over it. Alternativly, even when one side is not reveal-able, maybe the mainView should be movable in the oposite direction (but with strong resistance).
+// TODO: Animation does not stop when drag begins. (the view will 'wiggle' underneath your finger).
 
 
 import Foundation
@@ -29,11 +29,11 @@ public class RevealingTableViewCell: UITableViewCell
     // Defines the cell's revealing state
     public enum PositionState
     {
-        /// The default state
+        /// The default state (none of the views underneath are revealed)
         case closed
-        /// When `uiView_revealedContent_left` is shown
+        /// When `uiView_revealedContent_left` is revealed
         case openLeft
-        /// When `uiView_revealedContent_right` is shown
+        /// When `uiView_revealedContent_right` is revealed
         case openRight
         
         static let allValues: [PositionState] = [.closed, .openLeft, .openRight]
