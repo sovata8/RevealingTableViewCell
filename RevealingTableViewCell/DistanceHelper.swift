@@ -10,9 +10,9 @@ import QuartzCore
 
 internal enum DistanceHelper
 {
-    internal static func getClosest_X_AlsoConsideringVelocity_1D(originX: CGFloat,
-                                                        velocityDx: CGFloat,
-                                                        arrayOfX_toCheck: [CGFloat]
+    internal static func getClosestX_consideringVelocity(originX: CGFloat,
+                                                         velocityDx: CGFloat,
+                                                         arrayOfX_toCheck: [CGFloat]
         ) -> CGFloat
     {
         guard arrayOfX_toCheck.count > 0 else
@@ -42,6 +42,4 @@ internal enum DistanceHelper
         
         return answer_X_soFar
     }
-    
 }
-
