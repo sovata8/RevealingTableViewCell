@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103D62E41E9859FE004A8D5E /* UITableView+RevealingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */; };
 		1054698E1E96EBB000414B63 /* AutoLayoutTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */; };
 		10B633E41E9567F400684E93 /* RevealingTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B633E21E9567F400684E93 /* RevealingTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10B633EB1E95680000684E93 /* RevealingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B633EA1E95680000684E93 /* RevealingTableViewCell.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RevealingExtensions.swift"; sourceTree = "<group>"; };
 		1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutTools.swift; sourceTree = "<group>"; };
 		10B633DF1E9567F400684E93 /* RevealingTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevealingTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B633E21E9567F400684E93 /* RevealingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevealingTableViewCell.h; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				10B633EA1E95680000684E93 /* RevealingTableViewCell.swift */,
 				10B633EC1E9568BA00684E93 /* DistanceHelper.swift */,
 				1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */,
+				103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */,
 			);
 			path = RevealingTableViewCell;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1054698E1E96EBB000414B63 /* AutoLayoutTools.swift in Sources */,
+				103D62E41E9859FE004A8D5E /* UITableView+RevealingExtensions.swift in Sources */,
 				10B633ED1E9568BA00684E93 /* DistanceHelper.swift in Sources */,
 				10B633EB1E95680000684E93 /* RevealingTableViewCell.swift in Sources */,
 			);
