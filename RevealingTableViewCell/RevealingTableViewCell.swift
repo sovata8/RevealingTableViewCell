@@ -32,6 +32,26 @@ public protocol RevealingTableViewCellDelegate: class
 }
 
 
+// Default implementations, so that the protocol methods become optional.
+public extension RevealingTableViewCellDelegate
+{
+    func didChangeRevealingState(cell: RevealingTableViewCell)
+    {
+        return
+    }
+    
+    func didStartPanGesture(cell: RevealingTableViewCell)
+    {
+        return
+    }
+    
+    func didFinishAnimatingInState(revealingState: RevealingTableViewCell.RevealingState)
+    {
+        return
+    }
+}
+
+
 public class RevealingTableViewCell: UITableViewCell
 {
     ////////////////////////////////////////////////////////////////////////////////////////////
