@@ -90,4 +90,19 @@ internal enum AutoLayoutTools
             }
         }
     }
+    
+    
+    internal static func getConstraintsRecursively(view: UIView) -> [NSLayoutConstraint]
+    {
+        var allConstraints: [NSLayoutConstraint] = []
+        
+        allConstraints.append(contentsOf: view.constraints)
+        
+        for subview in view.subviews
+        {
+            allConstraints.append(contentsOf: self.getConstraintsRecursively(view: subview))
+        }
+        
+        return allConstraints
+    }
 }

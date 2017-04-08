@@ -11,9 +11,8 @@
 // NOTE: Using `UISpringTimingParameters` with initialVelocity vector causes the view to get offset slighly in the Y axis, even if we set the vector to have y=0.
 // NOTE: We need to completely remove and re-add constraints during dragging and animation. Setting isActive does not work.
 // TODO: If while dragging the orientation changes, react somehow?
-// TODO: If the spring is animating and is outside of the allowed ranges (overshooting), when we start drugging, the view will jump.
+// TODO: If the spring is animating and is outside of the allowed ranges (overshooting), when we start dragging, the view will jump.
 // TODO: Expose the draggingResitance constants as a public API
-
 
 import Foundation
 import UIKit
@@ -159,12 +158,11 @@ public class RevealingTableViewCell: UITableViewCell
         {
         case .began:
             // We need to do this, because otherwise we can't animate things properly
-            // Note that we also need to disable the constraints that affect the direct children.
-            // TODO: URGENT: Check if I need to also disable all constraints recursivly down. (e.g. if there are more constraints in subviews of subviews.
+            // Note that we also need to disable the constraints that affect the children.
             AutoLayoutTools.removeAllConstraints(inSuperview: self.contentView, relatingTo: self.uiView_mainContent)
-            self.constraintsToTemporaryDisable = self.uiView_mainContent.constraints
-            self.uiView_mainContent.removeConstraints(self.constraintsToTemporaryDisable)
-            
+            self.constraintsToTemporaryDisable = AutoLayoutTools.getConstraintsRecursively(view: self.uiView_mainContent)
+            self.constraintsToTemporaryDisable.forEach{$0.isActive = false}
+
             // BAD: Magic values.
             self.activeAnimationsCount = -999
             self.removeMainViewAnimations()
@@ -237,7 +235,7 @@ public class RevealingTableViewCell: UITableViewCell
             
             
         case .ended:
-            self.uiView_mainContent.addConstraints(self.constraintsToTemporaryDisable)
+            self.constraintsToTemporaryDisable.forEach{$0.isActive = true}
             self.activeAnimationsCount = 0
             let velocityX = panGesture.velocity(in: self.uiView_mainContent).x
             let possibleSnapPositionsX = self.supportedRevealingStates().map{self.getCenterXConstraintConstant(for: $0)}
