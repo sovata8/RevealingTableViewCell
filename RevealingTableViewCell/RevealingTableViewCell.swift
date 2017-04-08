@@ -51,7 +51,7 @@ public extension RevealingTableViewCellDelegate
 }
 
 
-public class RevealingTableViewCell: UITableViewCell
+open class RevealingTableViewCell: UITableViewCell
 {
     ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -114,7 +114,7 @@ public class RevealingTableViewCell: UITableViewCell
 
     
     // MARK: - UITableViewCell overrides
-    override public func awakeFromNib()
+    override open func awakeFromNib()
     {
         super.awakeFromNib()
         
@@ -127,7 +127,7 @@ public class RevealingTableViewCell: UITableViewCell
         }
     }
     
-    override public func prepareForReuse()
+    override open func prepareForReuse()
     {
         super.prepareForReuse()
         self.setRevealingState(.closed, animated: false)
@@ -391,7 +391,7 @@ public class RevealingTableViewCell: UITableViewCell
 // MARK: - UIGestureRecognizerDelegate
 extension RevealingTableViewCell // : UIGestureRecognizerDelegate
 {
-    override public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
+    override open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
     {
         if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer
         {
