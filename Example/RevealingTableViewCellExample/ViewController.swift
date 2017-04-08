@@ -44,8 +44,18 @@ extension ViewController: UITableViewDataSource
         
         switch indexPath.row
         {
-        case 1:
+        case 0:
             cellIdentifier = "DemoCell1"
+            
+        case 1:
+            cellIdentifier = "DemoCell2"
+            
+        case 2:
+            cellIdentifier = "DemoCell3"
+            
+        case 3:
+            cellIdentifier = "DemoCell4"
+            
         default:
             print("Unexpected row!")
             cellIdentifier = "DemoCell1"
