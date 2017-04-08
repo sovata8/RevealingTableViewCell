@@ -12,20 +12,25 @@ import UIKit
 
 public extension UITableView
 {
-    public func closeAllCells(exceptThisOne: RevealingTableViewCell? = nil)
+    /// If you leave `exceptThisOne` as `nil`, then all cells will be closed.
+    /// Otherwise all cells except of the cell specified will be closed
+    public func closeAllCells(exceptThisOne cellThatShouldNotBeClosed: RevealingTableViewCell? = nil)
     {
-        for visibleCell in self.visibleCells as! [RevealingTableViewCell]
+        for visibleCell in self.visibleCells
         {
-            if let exceptThisOne = exceptThisOne
+            if let revealingTableViewCell = visibleCell as? RevealingTableViewCell
             {
-                if visibleCell != exceptThisOne
+                if let cellThatShouldNotBeClosed = cellThatShouldNotBeClosed
                 {
-                    visibleCell.setRevealingState(.closed, animated: true)
+                    if visibleCell != cellThatShouldNotBeClosed
+                    {
+                        revealingTableViewCell.setRevealingState(.closed, animated: true)
+                    }
                 }
-            }
-            else
-            {
-                visibleCell.setRevealingState(.closed, animated: true)
+                else
+                {
+                    revealingTableViewCell.setRevealingState(.closed, animated: true)
+                }
             }
         }
     }
