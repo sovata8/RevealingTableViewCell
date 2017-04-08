@@ -27,6 +27,11 @@ pod 'RevealingTableViewCell'
 ## Usage
 No code changes required, everything is done in Interface Builder.
 
+Check out the Screenshots:
+
+![](https://github.com/sovata8/RevealingTableViewCell/raw/master/Screenshots/ViewStructure.png "")
+![](https://github.com/sovata8/RevealingTableViewCell/raw/master/Screenshots/IBOutlets.png "")
+
 Step 1  
 Use RevealingTableViewCell (or your subclass of it) as a custom class for your tableview cell in Interface Builder.
 
@@ -43,4 +48,4 @@ Step 3
 Inside the cell's default `contentView`, put and connect `uiView_revealedContent_left` and/or `uiView_revealedContent_right` subviews. Pin them using AutoLayout to the corresponding sides of your cell. Fix their widths. Make sure they are behind the `uiView_mainContent`.
 
 ## Known issues and considerations
-* At the moment it is required that all the 'hidden' views (the ones that are behind the main view and are revealed when sliding), are in the view hierarchy of the cell at all times, even if they are never to be shown. This might be a performance issue in some cases.
+* At the moment it is required that all the 'hidden' views (the ones that are behind the main view and are revealed when sliding), are in the view hierarchy of the cell at all times, even if they are never shown. This is obvously not great when performance matters.
