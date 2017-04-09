@@ -105,7 +105,7 @@ open class RevealingTableViewCell: UITableViewCell
         
     }
     
-    public weak var delegate: RevealingTableViewCellDelegate?
+    public weak var revealingCellDelegate: RevealingTableViewCellDelegate?
     
     // MARK: Public API -
     
@@ -169,7 +169,7 @@ open class RevealingTableViewCell: UITableViewCell
             
             self.initialPositionX = (self.uiView_mainContent.center.x - adjustmentSoThatXmeansMidX)
             
-            self.delegate?.didStartPanGesture(cell: self)
+            self.revealingCellDelegate?.didStartPanGesture(cell: self)
             
 
         case .changed:
@@ -291,7 +291,7 @@ open class RevealingTableViewCell: UITableViewCell
                             {
                                 if finished
                                 {
-                                    self.delegate?.didFinishAnimatingInState(revealingState: revealingState)
+                                    self.revealingCellDelegate?.didFinishAnimatingInState(revealingState: revealingState)
                                 }
                                 else
                                 {

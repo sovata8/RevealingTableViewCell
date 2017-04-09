@@ -62,7 +62,7 @@ extension ViewController: UITableViewDataSource
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RevealingTableViewCell
-        cell.delegate = self
+        cell.revealingCellDelegate = self
         return cell
     }
 }
