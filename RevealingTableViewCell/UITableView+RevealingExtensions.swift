@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 
+/// Extension for easy closing of RevealingTableViewCells in a tableView
 public extension UITableView
 {
     /// If you leave `exceptThisOne` as `nil`, then all cells will be closed.
