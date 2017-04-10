@@ -17,8 +17,8 @@ It can be set up through Interface Builder alone, with no code changes.
 Clone or download this repository and then open `Example/RevealingTableViewCellExample.xcodeproj`.
 
 ### YouTube
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=KwBGBTtiSr8
-" target="_blank"><img src="http://img.youtube.com/vi/KwBGBTtiSr8/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=6Dvg48Mb0Nc
+" target="_blank"><img src="http://img.youtube.com/vi/6Dvg48Mb0Nc/0.jpg" 
 alt="Click to see an example" width="240" height="180" border="10" /></a>
 
 
