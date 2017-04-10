@@ -5,9 +5,6 @@
 //  Created by Nikolay Suvandzhiev on 05/04/2017.
 //  Copyright © 2017 Nikolay Suvandzhiev. All rights reserved.
 //
-// TODO: Make the pan gesture immediate? Not sure if this is a good idea though...
-// TODO: Implement completion animation handlers?
-// TODO: It would be nice if, in the case of one of the sides being limited, the spring-back animationa atually bounces off the limited side, instead of going over it. Alternativly, even when one side is not reveal-able, maybe the mainView should be movable in the oposite direction (but with strong resistance).
 // NOTE: Using `UISpringTimingParameters` with initialVelocity vector causes the view to get offset slighly in the Y axis, even if we set the vector to have y=0.
 // NOTE: We need to completely remove and re-add constraints during dragging and animation. Setting isActive does not work.
 // TODO: If while dragging the orientation changes, react somehow?
