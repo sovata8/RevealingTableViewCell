@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		103D62E41E9859FE004A8D5E /* UITableView+RevealingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */; };
 		1054698E1E96EBB000414B63 /* AutoLayoutTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */; };
+		108A940C1E9BF5DA00BE41B8 /* TODOs in Resources */ = {isa = PBXBuildFile; fileRef = 108A940B1E9BF5DA00BE41B8 /* TODOs */; };
 		10B633E41E9567F400684E93 /* RevealingTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B633E21E9567F400684E93 /* RevealingTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10B633EB1E95680000684E93 /* RevealingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B633EA1E95680000684E93 /* RevealingTableViewCell.swift */; };
 		10B633ED1E9568BA00684E93 /* DistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B633EC1E9568BA00684E93 /* DistanceHelper.swift */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RevealingExtensions.swift"; sourceTree = "<group>"; };
 		1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutTools.swift; sourceTree = "<group>"; };
+		108A940B1E9BF5DA00BE41B8 /* TODOs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODOs; sourceTree = "<group>"; };
 		10B633DF1E9567F400684E93 /* RevealingTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevealingTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B633E21E9567F400684E93 /* RevealingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RevealingTableViewCell.h; sourceTree = "<group>"; };
 		10B633E31E9567F400684E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				10B633EC1E9568BA00684E93 /* DistanceHelper.swift */,
 				1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */,
 				103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */,
+				108A940B1E9BF5DA00BE41B8 /* TODOs */,
 			);
 			path = RevealingTableViewCell;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108A940C1E9BF5DA00BE41B8 /* TODOs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

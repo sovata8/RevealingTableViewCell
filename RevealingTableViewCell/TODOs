@@ -1,0 +1,6 @@
+INVESTIGATE: I tried using `UISpringTimingParameters` with initialVelocity vector causes the view to get offset slighly in the Y axis, even if we set the vector to have y=0.
+NOTE: We need to completely remove and re-add constraints during dragging and animation. Setting isActive does not work.
+
+TODO: If while dragging the orientation changes, react somehow?
+TODO: If the spring is animating and is outside of the allowed ranges (overshooting), when we start dragging, the view will jump.
+TODO: Expose the draggingResitance constants as a public API

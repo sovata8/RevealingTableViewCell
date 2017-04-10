@@ -10,6 +10,7 @@ import QuartzCore
 
 internal enum DistanceHelper
 {
+    // This is 1D
     internal static func getClosestX_consideringVelocity(originX: CGFloat,
                                                          velocityDx: CGFloat,
                                                          arrayOfX_toCheck: [CGFloat]
@@ -31,11 +32,11 @@ internal enum DistanceHelper
         
         for X_toCheck in arrayOfX_toCheck
         {
-            let distanceNonSquaredRooted = abs(pointOfOriginPlusScaledVelocity - X_toCheck)
+            let distanceX = abs(pointOfOriginPlusScaledVelocity - X_toCheck)
             
-            if distanceNonSquaredRooted < smallestDistanceSoFar
+            if distanceX < smallestDistanceSoFar
             {
-                smallestDistanceSoFar = distanceNonSquaredRooted
+                smallestDistanceSoFar = distanceX
                 answer_X_soFar = X_toCheck
             }
         }

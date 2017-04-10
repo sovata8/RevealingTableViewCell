@@ -4,13 +4,8 @@
 //
 //  Created by Nikolay Suvandzhiev on 05/04/2017.
 //  Copyright © 2017 Nikolay Suvandzhiev. All rights reserved.
-//
-// NOTE: Using `UISpringTimingParameters` with initialVelocity vector causes the view to get offset slighly in the Y axis, even if we set the vector to have y=0.
-// NOTE: We need to completely remove and re-add constraints during dragging and animation. Setting isActive does not work.
-// TODO: If while dragging the orientation changes, react somehow?
-// TODO: If the spring is animating and is outside of the allowed ranges (overshooting), when we start dragging, the view will jump.
-// TODO: Expose the draggingResitance constants as a public API
 
+ 
 import Foundation
 import UIKit
 
@@ -18,49 +13,47 @@ import UIKit
 /// Delegate for the `RevealingTableViewCell`
 public protocol RevealingTableViewCellDelegate: class
 {
-    /// This is called when the state changes and if there is an animation, it is called at the start of the animation.
+    /**
+     This is called when the state changes and if there is an animation, it is called at the start of the animation.
+     
+     - Parameters:
+        - cell: The cell in question
+     */
     func didChangeRevealingState(cell: RevealingTableViewCell)
     
     
-    /// Called when the user sarts horizontally sliding the cell.
+    /**
+     Called when the user sarts horizontally sliding the cell.
+     
+     - Parameters:
+        - cell: The cell in question
+     */
     func didStartPanGesture(cell: RevealingTableViewCell)
 
     
-    /// Called at the end of an animation.
-    func didFinishAnimatingInState(revealingState: RevealingTableViewCell.RevealingState)
+    /**
+     Called at the end of an animation.
+
+     - Parameters:
+        - cell: The cell in question
+        - revealingState: The `RevealingState` at which the animation ended
+     */
+    func didFinishAnimatingInState(cell: RevealingTableViewCell, revealingState: RevealingTableViewCell.RevealingState)
 }
 
 
 // Default implementations, so that in effect the protocol methods become optional.
 public extension RevealingTableViewCellDelegate
 {
-    func didChangeRevealingState(cell: RevealingTableViewCell)
-    {
-        return
-    }
-    
-    
-    func didStartPanGesture(cell: RevealingTableViewCell)
-    {
-        return
-    }
-    
-    
-    func didFinishAnimatingInState(revealingState: RevealingTableViewCell.RevealingState)
-    {
-        return
-    }
+    func didChangeRevealingState(cell: RevealingTableViewCell) { return }
+    func didStartPanGesture(cell: RevealingTableViewCell) { return }
+    func didFinishAnimatingInState(cell: RevealingTableViewCell, revealingState: RevealingTableViewCell.RevealingState) { return }
 }
 
 
 /// A `UITableViewCell` subclass that can be swiped to reveal content udnerneath it’s main view
 open class RevealingTableViewCell: UITableViewCell
 {
-    ////////////////////////////////////////////////////////////////////////////////////////////
-
-    // MARK: - Public API
-    
-    
     // MARK: - IBOutlets
     /// The content to be revealed, pinned to the left of the cell's `contentView`. Optional.
     @IBOutlet public weak var uiView_revealedContent_left: UIView?
@@ -70,10 +63,11 @@ open class RevealingTableViewCell: UITableViewCell
     
     /// This will be the view that slides sideways to reveal some content underneath. It needs to be pinned to the cell's `contentView` using the `layoutConstraint` (among others).
     @IBOutlet public weak var uiView_mainContent: UIView!
-    // MARK: IBOutlets -
     
     
-    /// Describes the revealing cell's state
+    // MARK: - Managing the cell's revealing state
+    
+    /// Describes the state of a `RevealingTableViewCell`
     public enum RevealingState
     {
         /// The default state (none of the views underneath are revealed)
@@ -90,12 +84,16 @@ open class RevealingTableViewCell: UITableViewCell
     }
     
     
-    /// The cell's revealing state
+    /// The cell's current revealing state
     public private(set) var revealingState: RevealingState = .closed
-    
-    
-    /// Set's the cell's revealing state with an optional animation.
-    /// - Parameter animated: Whether the state change should be animated.
+
+    /**
+     Sets the cell's revealing state with an optional animation.
+     
+     - Parameters:
+         - revealingState: The new `RevealingState` to set
+         - animated: Whether the state change should be animated
+     */
     public func setRevealingState(_ revealingState: RevealingState, animated: Bool)
     {
         guard self.revealingState != revealingState else
@@ -119,13 +117,8 @@ open class RevealingTableViewCell: UITableViewCell
     /// Delegate for the `RevealingTableViewCell`
     public weak var revealingCellDelegate: RevealingTableViewCellDelegate?
     
-    // MARK: Public API -
     
-    
-    ////////////////////////////////////////////////////////////////////////////////////////////
-
-    
-    // MARK: - UITableViewCell overrides
+    // MARK: - Cocoa overrides
     
     /// Documented in: `NSObject`
     override open func awakeFromNib()
@@ -147,21 +140,17 @@ open class RevealingTableViewCell: UITableViewCell
         super.prepareForReuse()
         self.setRevealingState(.closed, animated: false)
     }
-    // MARK: UITableViewCell overrides -
     
-    
+    // MARK: -
     
     // We need this because apple's UIAnimations completion handlers still suck (even with iOS 10 and UIViewPropertyAnimator).
     private var activeAnimationsCount: Int = 0
     
     // We disable constraints while dragging.
     private var constraintsToTemporaryDisable: [NSLayoutConstraint] = []
-
-
     
     // Properties needed for the pan logic
     private var initialPositionX: CGFloat!
-    
     
     // MARK: - Gesture handlers
     func selector_panGesture(_ panGesture: UIPanGestureRecognizer)
@@ -306,7 +295,7 @@ open class RevealingTableViewCell: UITableViewCell
                             {
                                 if finished
                                 {
-                                    self.revealingCellDelegate?.didFinishAnimatingInState(revealingState: revealingState)
+                                    self.revealingCellDelegate?.didFinishAnimatingInState(cell: self, revealingState: revealingState)
                                 }
                                 else
                                 {
@@ -403,7 +392,7 @@ open class RevealingTableViewCell: UITableViewCell
 }
 
 
-// MARK: - UIGestureRecognizerDelegate
+// MARK: - UIGestureRecognizerDelegate override
 extension RevealingTableViewCell // : UIGestureRecognizerDelegate
 {
     /// Documented in: `UIGestureRecognizerDelegate`

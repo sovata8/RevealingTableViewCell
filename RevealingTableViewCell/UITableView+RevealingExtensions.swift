@@ -13,8 +13,12 @@ import UIKit
 /// Extension for easy closing of RevealingTableViewCells in a tableView
 public extension UITableView
 {
-    /// If you leave `exceptThisOne` as `nil`, then all cells will be closed.
-    /// Otherwise all cells except of the cell specified will be closed
+    /**
+     Closes all the cells (unless you specify a cell to leave open).
+     
+     - Parameters:
+       - cellThatShouldNotBeClosed: The cell to leave open. (optional). Just don't pass anything (or pass `nil`) if you want all the cells to close.
+     */
     public func closeAllCells(exceptThisOne cellThatShouldNotBeClosed: RevealingTableViewCell? = nil)
     {
         for visibleCell in self.visibleCells
