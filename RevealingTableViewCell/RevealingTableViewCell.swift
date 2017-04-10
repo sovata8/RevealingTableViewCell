@@ -15,20 +15,23 @@ import Foundation
 import UIKit
 
 
+/// Delegate for the `RevealingTableViewCell`
 public protocol RevealingTableViewCellDelegate: class
 {
     /// This is called when the state changes and if there is an animation, it is called at the start of the animation.
     func didChangeRevealingState(cell: RevealingTableViewCell)
     
+    
     /// Called when the user sarts horizontally sliding the cell.
     func didStartPanGesture(cell: RevealingTableViewCell)
 
+    
     /// Called at the end of an animation.
     func didFinishAnimatingInState(revealingState: RevealingTableViewCell.RevealingState)
 }
 
 
-// Default implementations, so that the protocol methods become optional.
+// Default implementations, so that in effect the protocol methods become optional.
 public extension RevealingTableViewCellDelegate
 {
     func didChangeRevealingState(cell: RevealingTableViewCell)
@@ -36,10 +39,12 @@ public extension RevealingTableViewCellDelegate
         return
     }
     
+    
     func didStartPanGesture(cell: RevealingTableViewCell)
     {
         return
     }
+    
     
     func didFinishAnimatingInState(revealingState: RevealingTableViewCell.RevealingState)
     {
@@ -48,6 +53,7 @@ public extension RevealingTableViewCellDelegate
 }
 
 
+/// A `UITableViewCell` subclass that can be swiped to reveal content udnerneath it’s main view
 open class RevealingTableViewCell: UITableViewCell
 {
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,21 +73,29 @@ open class RevealingTableViewCell: UITableViewCell
     // MARK: IBOutlets -
     
     
+    /// Describes the revealing cell's state
     public enum RevealingState
     {
         /// The default state (none of the views underneath are revealed)
         case closed
+        
         /// When `uiView_revealedContent_left` is revealed
         case openLeft
+        
         /// When `uiView_revealedContent_right` is revealed
         case openRight
         
+        //
         static let allValues: [RevealingState] = [.closed, .openLeft, .openRight]
     }
     
-    /// Defines the cell's revealing state
+    
+    /// The cell's revealing state
     public private(set) var revealingState: RevealingState = .closed
     
+    
+    /// Set's the cell's revealing state with an optional animation.
+    /// - Parameter animated: Whether the state change should be animated.
     public func setRevealingState(_ revealingState: RevealingState, animated: Bool)
     {
         guard self.revealingState != revealingState else
@@ -102,6 +116,7 @@ open class RevealingTableViewCell: UITableViewCell
         
     }
     
+    /// Delegate for the `RevealingTableViewCell`
     public weak var revealingCellDelegate: RevealingTableViewCellDelegate?
     
     // MARK: Public API -
@@ -111,6 +126,8 @@ open class RevealingTableViewCell: UITableViewCell
 
     
     // MARK: - UITableViewCell overrides
+    
+    /// Documented in: `NSObject`
     override open func awakeFromNib()
     {
         super.awakeFromNib()
@@ -124,6 +141,7 @@ open class RevealingTableViewCell: UITableViewCell
         }
     }
     
+    /// Documented in: `UITableViewCell`
     override open func prepareForReuse()
     {
         super.prepareForReuse()
@@ -388,6 +406,7 @@ open class RevealingTableViewCell: UITableViewCell
 // MARK: - UIGestureRecognizerDelegate
 extension RevealingTableViewCell // : UIGestureRecognizerDelegate
 {
+    /// Documented in: `UIGestureRecognizerDelegate`
     override open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool
     {
         if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer

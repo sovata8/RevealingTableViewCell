@@ -1,4 +1,4 @@
-# RevealingTableViewCell (experimental)
+# RevealingTableViewCell
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content udnerneath it's main view.  
 It can be set all through Interface Builder, with no code changes.
 
