@@ -1,5 +1,4 @@
-![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)
- [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod] [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence] [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation]
+![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat) [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence] [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-DF5959.svg?style=flat)][linkCarthage]
  
 
 # RevealingTableViewCell
@@ -26,11 +25,17 @@ alt="Click to see an example" width="240" height="180" border="10" /></a>
 Requires: `Swift 3`, `iOS 10`
 
 
-### CocoaPods
+#### [CocoaPods](http://cocoapods.org) (recommended)
 
-```
+```ruby
 pod 'RevealingTableViewCell'
 ```
+
+#### [Carthage][linkCarthage]
+````bash
+github "sovata8/RevealingTableViewCell"
+````
+
 
 ## Usage
 No code changes required, everything is done in Interface Builder.
@@ -63,7 +68,7 @@ Inside the cell's default `contentView`, put and connect `uiView_revealedContent
 ### Making the cells close when needed (optional)
 Usually, you would want cells to automatically close whenever you scroll the tableview, or when another cell is slided sideways. To achieve this, use the provided tableview extension function `closeAllCells(exceptThisOne:)`. Here is an example (from the example project):
 
-```
+```swift
 // Close all cells when the tableview starts scrolling vertically
 extension ViewController: UIScrollViewDelegate
 {
@@ -73,7 +78,7 @@ extension ViewController: UIScrollViewDelegate
     }
 }
 ```
-```
+```swift
 // Close all other cells when a particular cell starts being slided
 extension ViewController: RevealingTableViewCellDelegate
 {
@@ -93,3 +98,4 @@ extension ViewController: RevealingTableViewCellDelegate
 [linkDocumentation]:http://cocoadocs.org/docsets/RevealingTableViewCell
 [linkPod]:https://cocoapods.org/pods/RevealingTableViewCell
 [linkMITLicence]:http://opensource.org/licenses/MIT
+[linkCarthage]:https://github.com/Carthage/Carthage
