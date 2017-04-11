@@ -1,7 +1,17 @@
-[![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)]() ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat) [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence] [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][linkCarthage]
+# RevealingTableViewCell
+
 --
 
-# RevealingTableViewCell
+[![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)]()
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat)]()
+[![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence]
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] 
+[![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod]
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][linkCarthage]
+
+--
+
+## What is it?
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view.  
 It can be set up through Interface Builder alone, with no code changes.
 
@@ -15,15 +25,17 @@ It can be set up through Interface Builder alone, with no code changes.
 ```bash
 pod try RevealingTableViewCell
 ```
+(this command clones the example project in a temporary folder and opens it in Xcode)
 
 ### Directly from the repo
 Clone or download this repository and then open `Example/RevealingTableViewCellExample.xcodeproj`.
 
-### YouTube
+### Demo video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=6Dvg48Mb0Nc
 " target="_blank"><img src="http://img.youtube.com/vi/6Dvg48Mb0Nc/0.jpg" 
 alt="Click to see an example" width="240" height="180" border="10" /></a>
 
+(opens in YouTube)
 
 ## Installation
 Requires: `Swift 3`, `iOS 10`
@@ -108,3 +120,7 @@ extension ViewController: RevealingTableViewCellDelegate
 [linkPod]:https://cocoapods.org/pods/RevealingTableViewCell
 [linkMITLicence]:http://opensource.org/licenses/MIT
 [linkCarthage]:https://github.com/Carthage/Carthage
+
+
+## License
+This project is licensed under the terms of the MIT license. See the [LICENSE](LICENCE) file.
