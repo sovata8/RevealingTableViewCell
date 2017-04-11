@@ -114,8 +114,36 @@ open class RevealingTableViewCell: UITableViewCell
         
     }
     
+    
     /// Delegate for the `RevealingTableViewCell`
     public weak var revealingCellDelegate: RevealingTableViewCellDelegate?
+    
+    
+    // MARK: Drag resistance.
+    
+    /**
+     Drag resistance:
+     Should be between `0.0` and `1.0`
+     - `0.0` means no resitance at all
+     - `1.0` means impossible to move
+     - Any other values will produce unpredictable results
+     (values below `0.0` make the view travel more than the finger in the same direcation)
+     (values over `1.0` will make the view go in reverse)
+     */
+    
+    /**
+     This is the usual dragging resistance for when the user has dragged the cell past the amount ocupied by the revealed view.
+     */
+    internal let dragResistance_normal: CGFloat = 0.7
+    
+    
+    /**
+     This is the dragging resistance for when there isn't a view to reveal.
+     For example a cell might only support revealing a view from the right side.
+     This indicates how hard it should be to drag the cell to the right.
+     This value should normally be higher than the `dragResistance_normal`.
+     */
+    internal let dragResistance_unsupportedState: CGFloat = 0.9
     
     
     // MARK: - Cocoa overrides
@@ -183,18 +211,10 @@ open class RevealingTableViewCell: UITableViewCell
             let widthToUseForRevealedView_left = self.isRevealingStateSupported(.openLeft) ? self.getCenterXConstraintConstant(for: .openLeft) : 0.0
             let widthToUseForRevealedView_right = self.isRevealingStateSupported(.openRight) ? self.getCenterXConstraintConstant(for: .openRight) : 0.0
             
-            let xOvershoot_ToTheLeft: CGFloat = fmax(0, widthToUseForRevealedView_right - xProposed)
-            let xOvershoot_ToTheRight: CGFloat = fmax(0, xProposed - widthToUseForRevealedView_left)
+            let xOvershoot_ToTheLeft = fmax(0, widthToUseForRevealedView_right - xProposed)
+            let xOvershoot_ToTheRight = fmax(0, xProposed - widthToUseForRevealedView_left)
             
-            // Drag resistance:
-            // Should be between 0.0 and 1.0
-            // 0.0 means no resitance at all.
-            // 1.0 means impossible.
-            // Any other values will produce unpredictable results
-            // (negative values will make the view travel more than the finger in the same direcation)
-            // (values over 1.0 will make the view go in reverse (i.e. travel more than the finger in the opposite direction))
-            
-            
+
             // INVESTIGATE:
             // I need help: Why does trying to set the dragging resistance based on the overshooting, cause reverse effect (seems after the resiatance passes 0.5).
             // e.g.
@@ -202,15 +222,8 @@ open class RevealingTableViewCell: UITableViewCell
             // let dragResistance: CGFloat = fmin(1.0, xOvershoot_ToTheRight/xMaxOvershootAllowed)
             
             
-            // This is the usual dragging resistance for when the user has dragged the cell past the amount ocupied by the revealed view.
-            let dragResistance_normal: CGFloat = 0.7
-            
-            // This is the dragging resistance for when there isn't even a view to reveal. For example a cell might only support revealing a view from the right side. This indicates how hard it should be to drag the cell to the right.
-            // This value should normally be higher than the regular `dragResistance_normal`.
-            let dragResistance_whenRevealingStateIsNotSupported: CGFloat = 0.9
-            
-            let dragResistance_toTheLeft: CGFloat = self.isRevealingStateSupported(.openRight) ? dragResistance_normal : dragResistance_whenRevealingStateIsNotSupported
-            let dragResistance_toTheRight: CGFloat = self.isRevealingStateSupported(.openLeft) ? dragResistance_normal : dragResistance_whenRevealingStateIsNotSupported
+            let dragResistance_toTheLeft = self.isRevealingStateSupported(.openRight) ? self.dragResistance_normal : self.dragResistance_unsupportedState
+            let dragResistance_toTheRight = self.isRevealingStateSupported(.openLeft) ? self.dragResistance_normal : self.dragResistance_unsupportedState
             
             let xToSet: CGFloat
             
@@ -242,7 +255,7 @@ open class RevealingTableViewCell: UITableViewCell
             self.constraintsToTemporaryDisable.forEach{$0.isActive = true}
             self.activeAnimationsCount = 0
             let velocityX = panGesture.velocity(in: self.uiView_mainContent).x
-            let possibleSnapPositionsX = self.supportedRevealingStates().map{self.getCenterXConstraintConstant(for: $0)}
+            let possibleSnapPositionsX = self.supportedRevealingStates.map{self.getCenterXConstraintConstant(for: $0)}
             
             let closestSnapPositionX = DistanceHelper.getClosestX_consideringVelocity(originX: self.uiView_mainContent.frame.origin.x,
                                                                                       velocityDx: velocityX,
@@ -362,7 +375,7 @@ open class RevealingTableViewCell: UITableViewCell
     }
     
     
-    private func supportedRevealingStates() -> [RevealingState]
+    private var supportedRevealingStates: [RevealingState]
     {
         return RevealingState.allValues.filter{self.isRevealingStateSupported($0)}
     }
@@ -370,7 +383,7 @@ open class RevealingTableViewCell: UITableViewCell
     
     private func getRevealingStateForConstraintConstant(_ constraintConstant: CGFloat) -> RevealingState?
     {
-        for revealingState in self.supportedRevealingStates()
+        for revealingState in self.supportedRevealingStates
         {
             if constraintConstant == self.getCenterXConstraintConstant(for: revealingState)
             {
