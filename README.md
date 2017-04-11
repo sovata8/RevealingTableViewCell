@@ -5,12 +5,16 @@
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view.  
 It can be set up through Interface Builder alone, with no code changes.
 
+
 <p align="center"><img src="Screenshots/RevealingCellScreenRecording10s.gif" /></p>
+
 
 ## Check it out
 
 ### CocoaPods
-`pod try RevealingTableViewCell`
+```bash
+pod try RevealingTableViewCell
+```
 
 ### Directly from the repo
 Clone or download this repository and then open `Example/RevealingTableViewCellExample.xcodeproj`.
@@ -32,7 +36,7 @@ pod 'RevealingTableViewCell'
 ```
 
 #### [Carthage][linkCarthage]
-````bash
+````
 github "sovata8/RevealingTableViewCell"
 ````
 
@@ -42,10 +46,15 @@ No code changes required, everything is done in Interface Builder.
 
 These screenshots show how to set up your views and IBOutlets:
 
+--
+
 <p align="center"><img src="Screenshots/ViewStructure.png" /></p>
+
+--
 
 <p align="center"><img src="Screenshots/IBOutlets.png" /></p>
 
+--
 
 ### Step 1
 Use `RevealingTableViewCell` (or your subclass of it) as a custom class for your tableview cell in Interface Builder.
