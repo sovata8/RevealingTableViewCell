@@ -2,7 +2,7 @@
 --
 
 # RevealingTableViewCell
-RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content udnerneath it's main view.  
+RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view.  
 It can be set up through Interface Builder alone, with no code changes.
 
 <p align="center"><img src="Screenshots/RevealingCellScreenRecording10s.gif" /></p>
@@ -66,7 +66,7 @@ uiView_mainContent.centerY = superview.centerY
 Inside the cell's default `contentView`, put and connect `uiView_revealedContent_left` and/or `uiView_revealedContent_right` subviews. Pin them using AutoLayout to the corresponding sides of your cell. Fix their widths. Make sure they are behind the `uiView_mainContent`.
 
 ### Making the cells close when needed (optional)
-Usually, you would want cells to automatically close whenever you scroll the tableview, or when another cell is slided sideways. To achieve this, use the provided tableview extension function `closeAllCells(exceptThisOne:)`. Here is an example (from the example project):
+Usually, you would want cells to automatically close whenever you scroll the tableview, or when another cell is swiped sideways. To achieve this, use the provided tableview extension function `closeAllCells(exceptThisOne:)`. Here is an example (from the example project):
 
 ```swift
 // Close all cells when the tableview starts scrolling vertically
@@ -79,7 +79,7 @@ extension ViewController: UIScrollViewDelegate
 }
 ```
 ```swift
-// Close all other cells when a particular cell starts being slided
+// Close all other cells when a particular cell starts being swiped
 extension ViewController: RevealingTableViewCellDelegate
 {
     func didStartPanGesture(cell: RevealingTableViewCell)
@@ -92,7 +92,7 @@ extension ViewController: RevealingTableViewCellDelegate
 
 
 ## Known issues and considerations
-* At the moment it is required that all the 'hidden' views (the ones that are behind the main view and are revealed when sliding), are in the view hierarchy of the cell at all times, even if they are never shown. This is obvously not great when performance matters.
+* At the moment it is required that all the 'hidden' views (the ones that are behind the main view and are revealed when sliding), are in the view hierarchy of the cell at all times, even if they are never shown. This is obviously not great when performance matters.
 
 
 [linkDocumentation]:http://cocoadocs.org/docsets/RevealingTableViewCell
