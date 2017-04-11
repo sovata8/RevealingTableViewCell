@@ -1,5 +1,5 @@
-![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat) [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence] [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-DF5959.svg?style=flat)][linkCarthage]
- 
+[![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)]() ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat) [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence] [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][linkCarthage]
+--
 
 # RevealingTableViewCell
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content udnerneath it's main view.  
@@ -25,7 +25,7 @@ alt="Click to see an example" width="240" height="180" border="10" /></a>
 Requires: `Swift 3`, `iOS 10`
 
 
-#### [CocoaPods](http://cocoapods.org) (recommended)
+#### [CocoaPods][linkPod] (recommended)
 
 ```ruby
 pod 'RevealingTableViewCell'
