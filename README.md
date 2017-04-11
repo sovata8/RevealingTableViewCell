@@ -6,7 +6,7 @@
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content udnerneath it's main view.  
 It can be set up through Interface Builder alone, with no code changes.
 
-<p align="center"><img src="Screenshots/RevealingCellScreenRecording10s.gif"  style="border:1px solid #EEEEEE" /></p>
+<p align="center"><img src="Screenshots/RevealingCellScreenRecording10s.gif" /></p>
 
 ## Check it out
 
@@ -37,9 +37,9 @@ No code changes required, everything is done in Interface Builder.
 
 These screenshots show how to set up your views and IBOutlets:
 
-<p align="center"><img src="Screenshots/ViewStructure.png" style="border:1px solid #EEEEEE" /></p>
+<p align="center"><img src="Screenshots/ViewStructure.png" /></p>
 
-<p align="center"><img src="Screenshots/IBOutlets.png" style="border:1px solid #EEEEEE" /></p>
+<p align="center"><img src="Screenshots/IBOutlets.png" /></p>
 
 
 ### Step 1
