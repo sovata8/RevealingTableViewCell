@@ -2,6 +2,13 @@
 
 __RevealingTableViewCell__ follows [Semantic Versioning](http://semver.org/).
 
+## [1.0.4](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.4)
+[GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/v1.0.3...1.0.4)
+
+- Carthage support added.
+
+---
+
 ## [1.0.3](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.3)
 [GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/v1.0.2...1.0.3)
 

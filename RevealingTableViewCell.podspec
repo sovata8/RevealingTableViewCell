@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RevealingTableViewCell"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "RevealingTableViewCell is a UITableViewCell that can be slided to reveal content udnerneath it's main view."
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
   # s.source       = { :git => "http://EXAMPLE/RevealingTableViewCell.git", :tag => "#{s.version}" }
-  s.source       = { :git => "https://github.com/sovata8/RevealingTableViewCell.git", :tag => "1.0.3" }
+  s.source       = { :git => "https://github.com/sovata8/RevealingTableViewCell.git", :tag => "1.0.4" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
