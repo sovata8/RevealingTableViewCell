@@ -32,31 +32,11 @@ internal enum AutoLayoutTools
     internal static func addConstraints_equal_topBottomWidth(ofViewA viewA: UIView,
                                                              toViewB viewB: UIView)
     {
-        let constraint_top = NSLayoutConstraint(item: viewA,
-                                                attribute: .top,
-                                                relatedBy: .equal,
-                                                toItem: viewB,
-                                                attribute: .top,
-                                                multiplier: 1,
-                                                constant: 0)
-        
-        let constraint_bottom = NSLayoutConstraint(item: viewA,
-                                                   attribute: .bottom,
-                                                   relatedBy: .equal,
-                                                   toItem: viewB,
-                                                   attribute: .bottom,
-                                                   multiplier: 1,
-                                                   constant: 0)
-        
-        let constraint_width = NSLayoutConstraint(item: viewA,
-                                                  attribute: .width,
-                                                  relatedBy: .equal,
-                                                  toItem: viewB,
-                                                  attribute: .width,
-                                                  multiplier: 1,
-                                                  constant: 0)
-        
-        [constraint_top, constraint_bottom, constraint_width].forEach{$0.isActive = true}
+        [
+            viewA.topAnchor.constraint(equalTo: viewB.topAnchor),
+            viewA.bottomAnchor.constraint(equalTo: viewB.bottomAnchor),
+            viewA.widthAnchor.constraint(equalTo: viewB.widthAnchor)
+        ].forEach{$0.isActive = true}
     }
     
     
@@ -64,14 +44,7 @@ internal enum AutoLayoutTools
                                                 toViewB viewB: UIView,
                                                 constant: CGFloat)
     {
-        NSLayoutConstraint(item: viewA,
-                           attribute: .centerX,
-                           relatedBy: .equal,
-                           toItem: viewB,
-                           attribute: .centerX,
-                           multiplier: 1,
-                           constant: constant
-            ).isActive = true
+        viewA.centerXAnchor.constraint(equalTo: viewB.centerXAnchor, constant: constant).isActive = true
     }
     
     
