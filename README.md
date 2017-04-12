@@ -23,7 +23,8 @@
 
 ## What is it?
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view.  
-It can be set up through Interface Builder alone, with no code changes.
+It can be set up through Interface Builder, with no code changes.  
+It does not provide anything other than the sliding view - it's up to you to set up any views that need be revealed.
 
 
 <p align="center"><img src="Screenshots/RevealingCellScreenRecording10s.gif" /></p>
@@ -64,7 +65,9 @@ github "sovata8/RevealingTableViewCell"
 
 
 ## Usage
-No code changes required, everything is done in Interface Builder.
+No code changes required, everything is done in Interface Builder.  
+Note that this framework does not provide anything other than the sliding view - it's up to you to set up any views that need be revealed (e.g. buttons, additional information etc.).
+
 
 These screenshots show how to set up your views and IBOutlets:
 
@@ -109,6 +112,7 @@ extension ViewController: UIScrollViewDelegate
     }
 }
 ```
+  
 ```swift
 // Close all other cells when a particular cell starts being swiped
 extension ViewController: RevealingTableViewCellDelegate
