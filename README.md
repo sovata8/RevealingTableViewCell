@@ -1,6 +1,6 @@
 # RevealingTableViewCell
 
-[![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)]()
+[![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)](https://travis-ci.org/sovata8/RevealingTableViewCell/)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat)]()
 [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence]
 [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] 
