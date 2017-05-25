@@ -262,7 +262,10 @@ open class RevealingTableViewCell: UITableViewCell
                                                                                       arrayOfX_toCheck: possibleSnapPositionsX)
             
             self.revealingState = self.getRevealingStateForConstraintConstant(closestSnapPositionX)!
-            self.animate(to: self.revealingState, initialVelocityX: velocityX, needsToCreateConstraints: true)
+            
+            self.animate(to: self.revealingState,
+                         initialVelocityX: velocityX,
+                         needsToCreateConstraints: true)
             
             
         case .cancelled:

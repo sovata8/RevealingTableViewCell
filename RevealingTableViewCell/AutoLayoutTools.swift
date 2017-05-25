@@ -60,6 +60,7 @@ internal enum AutoLayoutTools
                 && constraint.secondAttribute == .centerX
             {
                 constraint.constant = constant
+                return
             }
         }
     }
