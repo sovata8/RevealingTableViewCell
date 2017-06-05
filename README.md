@@ -1,7 +1,7 @@
 # RevealingTableViewCell
 
 [![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)](https://travis-ci.org/sovata8/RevealingTableViewCell/)
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat)]()
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat)](https://swift.org/)
 [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence]
 [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg)][linkDocumentation] 
 [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod]
@@ -24,7 +24,7 @@
 ## What is it?
 RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view.  
 It can be set up through Interface Builder, with no code changes.  
-It does not provide anything other than the sliding view - it's up to you to set up any views that need be revealed.
+(Note that it does not provide anything other than the sliding view - it's up to you to set up any views that need be revealed, e.g. buttons etc.)
 
 
 <p align="center"><img src="Screenshots/RevealingCellScreenRecording10s.gif" /></p>
