@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		103D62E41E9859FE004A8D5E /* UITableView+RevealingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103D62E31E9859FE004A8D5E /* UITableView+RevealingExtensions.swift */; };
 		1054698E1E96EBB000414B63 /* AutoLayoutTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054698D1E96EBB000414B63 /* AutoLayoutTools.swift */; };
-		108A940C1E9BF5DA00BE41B8 /* TODOs in Resources */ = {isa = PBXBuildFile; fileRef = 108A940B1E9BF5DA00BE41B8 /* TODOs */; };
 		10B633E41E9567F400684E93 /* RevealingTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B633E21E9567F400684E93 /* RevealingTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10B633EB1E95680000684E93 /* RevealingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B633EA1E95680000684E93 /* RevealingTableViewCell.swift */; };
 		10B633ED1E9568BA00684E93 /* DistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B633EC1E9568BA00684E93 /* DistanceHelper.swift */; };
@@ -137,7 +136,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				108A940C1E9BF5DA00BE41B8 /* TODOs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
