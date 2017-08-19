@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RevealingTableViewCell Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RevealingTableViewCell" class="dashAnchor"></a>
+    <a title="RevealingTableViewCell Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">RevealingTableViewCell Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">RevealingTableViewCell Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RevealingTableViewCell Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RevealingTableViewCell.html">RevealingTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RevealingTableViewCell/RevealingState.html">– RevealingState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RevealingTableViewCellDelegate.html">RevealingTableViewCellDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RevealingTableViewCell</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">RevealingTableViewCell</span><span class="p">:</span> <span class="kt">UITableViewCell</span></code></pre>
+
+                </div>
+              </div>
+            <p>A <code>UITableViewCell</code> subclass that can be swiped to reveal content udnerneath it’s main view</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/IBOutlets"></a>
+                <a name="//apple_ref/swift/Section/IBOutlets" class="dashAnchor"></a>
+                <a href="#/IBOutlets">
+                  <h3 class="section-name">IBOutlets</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC22RevealingTableViewCell22RevealingTableViewCell27uiView_revealedContent_leftXwGSqCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/uiView_revealedContent_left" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC22RevealingTableViewCell22RevealingTableViewCell27uiView_revealedContent_leftXwGSqCSo6UIView_">uiView_revealedContent_left</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The content to be revealed, pinned to the left of the cell&rsquo;s <code>contentView</code>. Optional.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">uiView_revealedContent_left</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC22RevealingTableViewCell22RevealingTableViewCell28uiView_revealedContent_rightXwGSqCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/uiView_revealedContent_right" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC22RevealingTableViewCell22RevealingTableViewCell28uiView_revealedContent_rightXwGSqCSo6UIView_">uiView_revealedContent_right</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The content to be revealed, pinned to the right of the cell&rsquo;s <code>contentView</code>. Optional.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">uiView_revealedContent_right</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC22RevealingTableViewCell22RevealingTableViewCell18uiView_mainContentXwGSQCSo6UIView_"></a>
+                    <a name="//apple_ref/swift/Property/uiView_mainContent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC22RevealingTableViewCell22RevealingTableViewCell18uiView_mainContentXwGSQCSo6UIView_">uiView_mainContent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This will be the view that slides sideways to reveal some content underneath. It needs to be pinned to the cell&rsquo;s <code>contentView</code> using the <code>layoutConstraint</code> (among others).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">uiView_mainContent</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Managing%20the%20cell&#39;s%20revealing%20state"></a>
+                <a name="//apple_ref/swift/Section/Managing the cell&#39;s revealing state" class="dashAnchor"></a>
+                <a href="#/Managing%20the%20cell&#39;s%20revealing%20state">
+                  <h3 class="section-name">Managing the cell&#39;s revealing state</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:OC22RevealingTableViewCell22RevealingTableViewCell14RevealingState"></a>
+                    <a name="//apple_ref/swift/Enum/RevealingState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:OC22RevealingTableViewCell22RevealingTableViewCell14RevealingState">RevealingState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Describes the state of a <code><a href="../Classes/RevealingTableViewCell.html">RevealingTableViewCell</a></code></p>
+
+                        <a href="../Classes/RevealingTableViewCell/RevealingState.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RevealingState</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC22RevealingTableViewCell22RevealingTableViewCell14revealingStateOS0_14RevealingState"></a>
+                    <a name="//apple_ref/swift/Property/revealingState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC22RevealingTableViewCell22RevealingTableViewCell14revealingStateOS0_14RevealingState">revealingState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The cell&rsquo;s current revealing state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">revealingState</span><span class="p">:</span> <span class="kt"><a href="../Classes/RevealingTableViewCell/RevealingState.html">RevealingState</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">closed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22RevealingTableViewCell22RevealingTableViewCell17setRevealingStateFTOS0_14RevealingState8animatedSb_T_"></a>
+                    <a name="//apple_ref/swift/Method/setRevealingState(_:animated:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22RevealingTableViewCell22RevealingTableViewCell17setRevealingStateFTOS0_14RevealingState8animatedSb_T_">setRevealingState(_:animated:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the cell&rsquo;s revealing state with an optional animation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setRevealingState</span><span class="p">(</span><span class="n">_</span> <span class="nv">revealingState</span><span class="p">:</span> <span class="kt"><a href="../Classes/RevealingTableViewCell/RevealingState.html">RevealingState</a></span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>revealingState</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The new <code>RevealingState</code> to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the state change should be animated</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC22RevealingTableViewCell22RevealingTableViewCell21revealingCellDelegateXwGSqPS_30RevealingTableViewCellDelegate__"></a>
+                    <a name="//apple_ref/swift/Property/revealingCellDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC22RevealingTableViewCell22RevealingTableViewCell21revealingCellDelegateXwGSqPS_30RevealingTableViewCellDelegate__">revealingCellDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate for the <code>RevealingTableViewCell</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">revealingCellDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RevealingTableViewCellDelegate.html">RevealingTableViewCellDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Cocoa%20overrides"></a>
+                <a name="//apple_ref/swift/Section/Cocoa overrides" class="dashAnchor"></a>
+                <a href="#/Cocoa%20overrides">
+                  <h3 class="section-name">Cocoa overrides</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22RevealingTableViewCell22RevealingTableViewCell12awakeFromNibFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/awakeFromNib()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22RevealingTableViewCell22RevealingTableViewCell12awakeFromNibFT_T_">awakeFromNib()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Documented in: <code>NSObject</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">awakeFromNib</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22RevealingTableViewCell22RevealingTableViewCell15prepareForReuseFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/prepareForReuse()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22RevealingTableViewCell22RevealingTableViewCell15prepareForReuseFT_T_">prepareForReuse()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Documented in: <code>UITableViewCell</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">prepareForReuse</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC22RevealingTableViewCell22RevealingTableViewCell28gestureRecognizerShouldBeginFCSo19UIGestureRecognizerSb"></a>
+                    <a name="//apple_ref/swift/Method/gestureRecognizerShouldBegin(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC22RevealingTableViewCell22RevealingTableViewCell28gestureRecognizerShouldBeginFCSo19UIGestureRecognizerSb">gestureRecognizerShouldBegin(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Documented in: <code>UIGestureRecognizerDelegate</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">gestureRecognizerShouldBegin</span><span class="p">(</span><span class="n">_</span> <span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UIGestureRecognizer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/sovata8/RevealingTableViewCell" target="_blank" rel="external">Nikolay Suvandzhiev</a>. All rights reserved. (Last updated: 2017-08-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
