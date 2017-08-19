@@ -136,7 +136,7 @@ extension ViewController: RevealingTableViewCellDelegate
 
 ## Documentation
 Check out the auto-generated [Documentation](docs/Classes/RevealingTableViewCell.html).  
-(If you're reading this on GitHub, and the above link opens the html source, try [this](https://github.com/sovata8/RevealingTableViewCell/tree/master/docs/Classes/RevealingTableViewCell.html))
+(If you're reading this on GitHub, and the above link opens the html source, try [this](http://htmlpreview.github.io/?https://github.com/sovata8/RevealingTableViewCell/blob/1.0.6/docs/Classes/RevealingTableViewCell.html))
 
 ## Used by
 
