@@ -2,6 +2,13 @@
 
 __RevealingTableViewCell__ follows [Semantic Versioning](http://semver.org/).
 
+## [1.0.6](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.6)
+[GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/1.0.5...1.0.6)
+
+- Better README
+- Added the generated docset to the repo itself (`/docs`) in light of the fact that cocoadocs.org has been discontinued.
+
+
 ## [1.0.5](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.5)
 [GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/1.0.4...1.0.5)
 
