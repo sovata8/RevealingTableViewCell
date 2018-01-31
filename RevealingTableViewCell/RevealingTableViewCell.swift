@@ -181,7 +181,7 @@ open class RevealingTableViewCell: UITableViewCell
     private var initialPositionX: CGFloat!
     
     // MARK: - Gesture handlers
-    func selector_panGesture(_ panGesture: UIPanGestureRecognizer)
+    @objc func selector_panGesture(_ panGesture: UIPanGestureRecognizer)
     {
         let translationX = panGesture.translation(in: self.uiView_mainContent).x
         let adjustmentSoThatXmeansMidX = self.uiView_mainContent.frame.width/2
