@@ -1,5 +1,5 @@
 language: objective-c # we need to use this value even though the actual language is swift
-osx_image: xcode8.3
+osx_image: xcode9.2
 
 env:
 
