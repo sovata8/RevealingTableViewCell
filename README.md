@@ -98,7 +98,7 @@ Inside the cell's default `contentView`, put a subview and connect it to the the
 ### Step 3
 Inside the cell's default `contentView`, put and connect `uiView_revealedContent_left` and/or `uiView_revealedContent_right` subviews. Pin them using AutoLayout to the corresponding sides of your cell. Fix their widths. Make sure they are behind the `uiView_mainContent`.
 
-### Step4
+### Step 4
 That's all - run your app!
 
 
