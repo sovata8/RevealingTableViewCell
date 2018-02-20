@@ -2,6 +2,13 @@
 
 __RevealingTableViewCell__ follows [Semantic Versioning](http://semver.org/).
 
+
+## [1.0.7](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.7)
+[GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/1.0.6...1.0.7)
+
+- Updated to Swift 4
+
+
 ## [1.0.6](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.6)
 [GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/1.0.5...1.0.6)
 
