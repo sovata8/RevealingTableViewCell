@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg)](https://travis-ci.org/sovata8/RevealingTableViewCell/) <a href="#documentation"><img src="https://cdn.rawgit.com/sovata8/RevealingTableViewCell/master/docs/badge.svg" /></a> [![CocoaPods](https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg)][linkPod] [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][linkCarthage]
 [![license MIT](https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg)][linkMITLicence]
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat)](https://swift.org/)
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-FD7835.svg?style=flat)](https://swift.org/)
 
 ---
 
@@ -49,7 +49,7 @@ alt="Click to see an example" width="240" height="180" border="10" /></a>
 (opens in YouTube)
 
 ## Installation
-Requires min: `Swift 3`, `iOS 10`
+Requires: `iOS 10 +`
 
 
 #### [CocoaPods][linkPod] (recommended)
