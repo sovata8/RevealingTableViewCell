@@ -5,6 +5,9 @@ branches:
   only:
     - master
 
+before_install:
+  - gem install cocoapods -v '1.4.0'
+
 env:
 
    global:
