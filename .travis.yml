@@ -10,28 +10,29 @@ before_install:
 
 env:
 
-   global:
-   - LANG=en_US.UTF-8
+  global:
+    - LANG=en_US.UTF-8
+    - PROJECT="RevealingTableViewCell.xcodeproj"
+    - IOS_SCHEME="RevealingTableViewCellExample"
+    - IOS_SDK=iphonesimulator11.2  
 
-   - PROJECT="RevealingTableViewCell.xcodeproj"
-   - IOS_SCHEME="RevealingTableViewCellExample"
-   - IOS_SDK=iphonesimulator10.3  
-
-   matrix:
-   - DESTINATION="OS=11.2,name=iPhone 6s"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="YES" # Only lint the first time
-   - DESTINATION="OS=10.0,name=iPhone SE"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
-   - DESTINATION="OS=10.1,name=iPhone 6s"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
-   - DESTINATION="OS=10.2,name=iPhone 7"      SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
-   - DESTINATION="OS=10.3.1,name=iPad Air 2"  SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
+  matrix:
+    - DESTINATION="OS=11.2,name=iPhone 6s"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="YES" # Only lint once.
+    - DESTINATION="OS=11.1,name=iPhone SE"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
+    - DESTINATION="OS=11.0,name=iPhone 6s"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
+    - DESTINATION="OS=10.3,name=iPhone 7"      SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
+    - DESTINATION="OS=10.2,name=iPad Air 2"    SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="NO"
 
 script:
-- set -o pipefail
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
 
-- if [ $POD_LINT == "YES" ]; then
-      pod lib lint --quick;
-  fi
+  - if [ $POD_LINT == "YES" ]; then
+        pod lib lint --quick;
+    fi
 
-- xcodebuild build analyze -project Example/RevealingTableViewCellExample.xcodeproj -scheme RevealingTableViewCellExample -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+  - xcodebuild build analyze -project Example/RevealingTableViewCellExample.xcodeproj -scheme RevealingTableViewCellExample -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
 
 notifications:
   email:
