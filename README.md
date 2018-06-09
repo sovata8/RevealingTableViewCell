@@ -137,8 +137,8 @@ Check out the auto-generated [Documentation](docs/Classes/RevealingTableViewCell
 
 ## Used by
 
-<a href='https://pivotlistapp.com/' target="\_parent"><img src='Screenshots/app_icon_pivotlist.png' alt='Nozzle Logo' style='width:60px;'/></a>  
-<big>[PivotList](https://pivotlistapp.com/)</big>
+<a href='https://pivotlist.app/' target="\_parent"><img src='Screenshots/app_icon_pivotlist.png' alt='PivotList Logo' style='width:60px;'/></a>  
+<big>[PivotList](https://pivotlist.app/)</big>
 
 Please let me know if you use `RevealingTableViewCell` in your app and would like to be mentioned here. (either email me or create e new issue with the "usedby" label)
 
