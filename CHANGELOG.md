@@ -6,10 +6,10 @@ __RevealingTableViewCell__ follows [Semantic Versioning](http://semver.org/).
 ## [1.0.9](https://github.com/sovata8/RevealingTableViewCell/releases/tag/1.0.9)
 [GitHub compare](https://github.com/sovata8/RevealingTableViewCell/compare/1.0.7...1.0.9)
 
-- Updated to Swift 4.0
+- Updated to Swift 4.2
 - Fixed warning about `fabs` being renamed to `abs`
 - Updated Xcode settings of Example project
-- Commited `IDEWorkspaceChecks.plist`
+- Committed `IDEWorkspaceChecks.plist`
 
 ---
 
