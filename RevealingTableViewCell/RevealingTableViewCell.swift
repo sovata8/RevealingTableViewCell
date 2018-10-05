@@ -417,7 +417,7 @@ extension RevealingTableViewCell // : UIGestureRecognizerDelegate
         if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer
         {
             let translation = panGestureRecognizer.translation(in: panGestureRecognizer.view)
-            let isHorizontalTranslationLargerThanVertical = (fabs(translation.x) > fabs(translation.y))
+            let isHorizontalTranslationLargerThanVertical = (abs(translation.x) > abs(translation.y))
             return isHorizontalTranslationLargerThanVertical
         }
         
