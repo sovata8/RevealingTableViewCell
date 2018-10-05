@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RevealingTableViewCell"
-  s.version      = "1.0.7"
-  s.summary      = "RevealingTableViewCell is a UITableViewCell that can be slided to reveal content udnerneath it's main view."
+  s.version      = "1.0.8"
+  s.summary      = "RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
 
-"RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content udnerneath it's main view."
+"RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view."
 
                    DESC
 
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
   # s.source       = { :git => "http://EXAMPLE/RevealingTableViewCell.git", :tag => "#{s.version}" }
-  s.source       = { :git => "https://github.com/sovata8/RevealingTableViewCell.git", :tag => "1.0.7" }
+  s.source       = { :git => "https://github.com/sovata8/RevealingTableViewCell.git", :tag => "1.0.8" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -114,6 +114,6 @@ Pod::Spec.new do |s|
 
   # Other stuff
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
 
 end
