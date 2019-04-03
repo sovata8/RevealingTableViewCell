@@ -19,7 +19,7 @@ public extension UITableView
      - Parameters:
        - cellThatShouldNotBeClosed: The cell to leave open. (optional). Just don't pass anything (or pass `nil`) if you want all the cells to close.
      */
-    public func closeAllCells(exceptThisOne cellThatShouldNotBeClosed: RevealingTableViewCell? = nil)
+    func closeAllCells(exceptThisOne cellThatShouldNotBeClosed: RevealingTableViewCell? = nil)
     {
         for visibleCell in self.visibleCells
         {
