@@ -61,12 +61,9 @@
             
             <h1 id='revealingtableviewcell' class='heading'>RevealingTableViewCell</h1>
 
-<p><a href="https://travis-ci.org/sovata8/RevealingTableViewCell/"><img src="https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg" alt="Travis"></a>
-<a href="https://swift.org/"><img src="https://img.shields.io/badge/Swift-3.0-FD7835.svg?style=flat" alt="Swift 3.0"></a>
+<p><a href="https://travis-ci.org/sovata8/RevealingTableViewCell/"><img src="https://img.shields.io/travis/sovata8/RevealingTableViewCell.svg" alt="Travis"></a> <a href="#documentation"><img src="https://cdn.rawgit.com/sovata8/RevealingTableViewCell/master/docs/badge.svg" /></a> <a href="https://cocoapods.org/pods/RevealingTableViewCell"><img src="https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg" alt="CocoaPods"></a> <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
 <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/cocoapods/l/RevealingTableViewCell.svg" alt="license MIT"></a>
-<a href="http://cocoadocs.org/docsets/RevealingTableViewCell"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/RevealingTableViewCell.svg" alt="CocoaPods"></a> 
-<a href="https://cocoapods.org/pods/RevealingTableViewCell"><img src="https://img.shields.io/cocoapods/v/RevealingTableViewCell.svg" alt="CocoaPods"></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
+<a href="https://swift.org/"><img src="https://img.shields.io/badge/Swift-4.2-FD7835.svg?style=flat" alt="Swift 4.2"></a></p>
 
 <hr>
 
@@ -83,11 +80,11 @@
 </p>
 <h2 id='what-is-it' class='heading'>What is it?</h2>
 
-<p><code>RevealingTableViewCell</code> is a <code>UITableViewCell</code> that can be swiped to reveal content underneath its main view.  </p>
+<p><code><a href="Classes/RevealingTableViewCell.html">RevealingTableViewCell</a></code> is a <code>UITableViewCell</code> that can be swiped to reveal content underneath its main view.  </p>
 
 <ul>
-<li>Zero-code setup: <code>RevealingTableViewCell</code> can be set up through Interface Builder, with no code changes.</li>
-<li>&lsquo;Bring your own views&rsquo; - Note that <code>RevealingTableViewCell</code> does not provide anything other than the sliding view - it&rsquo;s up to you to set up any views that need be revealed, e.g. buttons etc.)</li>
+<li>Zero-code setup: <code><a href="Classes/RevealingTableViewCell.html">RevealingTableViewCell</a></code> can be set up through Interface Builder, with no code changes.</li>
+<li>&lsquo;Bring your own views&rsquo; - Note that <code><a href="Classes/RevealingTableViewCell.html">RevealingTableViewCell</a></code> does not provide anything other than the sliding view - it&rsquo;s up to you to set up any views that need be revealed, e.g. buttons etc.)</li>
 </ul>
 
 <p><br/></p>
@@ -111,7 +108,7 @@ alt="Click to see an example" width="240" height="180" border="10" /></a></p>
 <p>(opens in YouTube)</p>
 <h2 id='installation' class='heading'>Installation</h2>
 
-<p>Requires min: <code>Swift 3</code>, <code>iOS 10</code></p>
+<p>Requires: <code>iOS 10 +</code></p>
 <h4 id='a-href-https-cocoapods-org-pods-revealingtableviewcell-cocoapods-a-recommended' class='heading'><a href="https://cocoapods.org/pods/RevealingTableViewCell">CocoaPods</a> (recommended)</h4>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'RevealingTableViewCell'</span>
 </code></pre>
@@ -130,7 +127,7 @@ Note that this framework does not provide anything other than the sliding view -
 <p align="center"><img src="Screenshots/IBOutlets.png" /></p>
 <h3 id='step-1' class='heading'>Step 1</h3>
 
-<p>Use <code>RevealingTableViewCell</code> (or your subclass of it) as a custom class for your tableview cell in Interface Builder.</p>
+<p>Use <code><a href="Classes/RevealingTableViewCell.html">RevealingTableViewCell</a></code> (or your subclass of it) as a custom class for your tableview cell in Interface Builder.</p>
 <h3 id='step-2' class='heading'>Step 2</h3>
 
 <p>Inside the cell&rsquo;s default <code>contentView</code>, put a subview and connect it to the the <code>IBOutlet</code> <code>uiView_mainContent</code>. This will be the view that slides sideways to reveal some content underneath. Using AutoLayout, pin this <code>uiView_mainContent</code> to it&rsquo;s superview (the <code>contentView</code>) using the following constraints:  </p>
@@ -144,7 +141,7 @@ Note that this framework does not provide anything other than the sliding view -
 <h3 id='step-3' class='heading'>Step 3</h3>
 
 <p>Inside the cell&rsquo;s default <code>contentView</code>, put and connect <code>uiView_revealedContent_left</code> and/or <code>uiView_revealedContent_right</code> subviews. Pin them using AutoLayout to the corresponding sides of your cell. Fix their widths. Make sure they are behind the <code>uiView_mainContent</code>.</p>
-<h3 id='step4' class='heading'>Step4</h3>
+<h3 id='step-4' class='heading'>Step 4</h3>
 
 <p>That&rsquo;s all - run your app!</p>
 <h3 id='making-the-cells-close-when-needed-small-optional-small' class='heading'>Making the cells close when needed <small>(optional)</small></h3>
@@ -169,15 +166,20 @@ Note that this framework does not provide anything other than the sliding view -
 <span class="p">}</span>
 </code></pre>
 
-<p>(of course when you are creating the cell in your <code>cellForRowAt indexPath</code> logic, don&rsquo;t forget to specify that <code>cell.revealingCellDelegate = self</code>)</p>
+<p>(of course when you are creating the cell in your <code>cellForRowAt indexPath</code> logic, don&rsquo;t forget to set the delegate like this: <code>cell.revealingCellDelegate = self</code>)</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
-<p>Checkout the auto-generated <a href="Documentation">Documentation</a>.</p>
-<h2 id='known-issues-and-considerations' class='heading'>Known issues and considerations</h2>
+<p>Check out the auto-generated <a href="docs/Classes/RevealingTableViewCell.html">Documentation</a>.<br>
+(If you&rsquo;re reading this on GitHub, and the above link opens the html source, try <a href="http://htmlpreview.github.io/?https://github.com/sovata8/RevealingTableViewCell/blob/1.1.0/docs/Classes/RevealingTableViewCell.html">this</a>)</p>
+<h2 id='used-by' class='heading'>Used by</h2>
 
-<ul>
-<li>At the moment it is required that all the &lsquo;hidden&rsquo; views (the ones that are behind the main view and are revealed when sliding), are in the view hierarchy of the cell at all times, even if they are never shown. This is obviously not great when performance matters.</li>
-</ul>
+<p><a href='https://pivotlist.app/' target="\_parent"><img src='Screenshots/app_icon_pivotlist.png' alt='PivotList Logo' style='width:60px;'/></a><br>
+<big><a href="https://pivotlist.app/">PivotList</a></big></p>
+
+<p>Please let me know if you use <code><a href="Classes/RevealingTableViewCell.html">RevealingTableViewCell</a></code> in your app and would like to be mentioned here. (either email me or create e new issue with the <q>usedby</q> label)</p>
+<h2 id='known-limitations-and-considerations' class='heading'>Known limitations and considerations</h2>
+
+<p>The way this library works requires that all the &lsquo;hidden&rsquo; views (the ones that are behind the main view and are revealed when sliding), are in the view hierarchy of the cell at all times, even if they are never shown. This is obviously not great when performance matters.</p>
 <h2 id='license' class='heading'>License</h2>
 
 <p>This project is licensed under the terms of the MIT license. See the <a href="LICENSE">LICENSE</a> file.</p>
@@ -185,8 +187,8 @@ Note that this framework does not provide anything other than the sliding view -
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/sovata8/RevealingTableViewCell" target="_blank" rel="external">Nikolay Suvandzhiev</a>. All rights reserved. (Last updated: 2017-08-19)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/sovata8/RevealingTableViewCell" target="_blank" rel="external">Nikolay Suvandzhiev</a>. All rights reserved. (Last updated: 2019-09-24)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
