@@ -14,7 +14,7 @@ env:
     - LANG=en_US.UTF-8
     - PROJECT="RevealingTableViewCell.xcodeproj"
     - IOS_SCHEME="RevealingTableViewCellExample"
-    - IOS_SDK=iphonesimulator11.2  
+    - IOS_SDK=iphonesimulator11.4  
 
   matrix:
     - DESTINATION="OS=11.2,name=iPhone 6s"     SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"   POD_LINT="YES" # Only lint once.
