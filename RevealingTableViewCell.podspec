@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RevealingTableViewCell"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "RevealingTableViewCell is a UITableViewCell that can be swiped to reveal content underneath its main view."
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
   # s.source       = { :git => "http://EXAMPLE/RevealingTableViewCell.git", :tag => "#{s.version}" }
-  s.source       = { :git => "https://github.com/sovata8/RevealingTableViewCell.git", :tag => "1.1.0" }
+  s.source       = { :git => "https://github.com/sovata8/RevealingTableViewCell.git", :tag => "1.1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -113,7 +113,7 @@ Pod::Spec.new do |s|
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
   # Other stuff
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
-  s.swift_version = '4.2'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5' }
+  s.swift_version = '5'
 
 end
