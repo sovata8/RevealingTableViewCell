@@ -6,7 +6,7 @@ branches:
     - master
 
 before_install:
-  - gem install cocoapods -v '1.4.0'
+  - gem install cocoapods -v '1.9.1'
 
 env:
 
