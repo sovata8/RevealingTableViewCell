@@ -2,8 +2,8 @@ language: objective-c # we need to use this value even though the actual languag
 osx_image: xcode11.3
 
 branches:
-  only:
-    - master
+  except:
+    - legacy
 
 before_install:
   - gem install cocoapods -v '1.9.1'
